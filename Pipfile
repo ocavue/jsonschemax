@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+
+[dev-packages]
+twine = "*"
+mypy = "*"
+black = "==18.9b0"
+isort = "*"
+ipdb = "*"
+
+[requires]
+python_version = "3.7"
+
+[scripts]
+build = "python3 setup.py sdist bdist_wheel"
+upload = "twine upload dist/*"
