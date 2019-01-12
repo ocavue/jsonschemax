@@ -9,7 +9,6 @@ from typing import Any, Callable, cast
 from jsonschemax.compilation import Validation
 from jsonschemax.errors import InvalidSchemaError
 from jsonschemax.types import (
-    JSON,
     Callback,
     RefList,
     is_array,
@@ -17,7 +16,7 @@ from jsonschemax.types import (
     is_object,
     is_string,
 )
-from jsonschemax.utils import always_true_callback, type_map
+from jsonschemax.utils import type_map
 
 __all__ = ("draft7_keyword_map",)
 

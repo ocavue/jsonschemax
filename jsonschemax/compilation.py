@@ -4,7 +4,7 @@ from urllib.parse import urljoin
 from jsonschemax.errors import InvalidSchemaError
 from jsonschemax.meta_schemas import draft7_meta_schema
 from jsonschemax.types import Callback, RefList, Schema
-from jsonschemax.utils import JsonPointer, always_true_callback, split_uri
+from jsonschemax.utils import JsonPointer, split_uri
 
 
 class Validation:  # TODO rename: Compilation
