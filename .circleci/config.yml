@@ -1,0 +1,12 @@
+version: 2
+
+jobs:
+  test:
+    docker:
+      - image: python:3.7-stretch
+    steps:
+      - checkout
+      - run: python -V
+      - run: pip3 install pipenv
+      - run: make init
+      - run: make test
