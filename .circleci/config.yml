@@ -4,7 +4,6 @@ executors:
   python3:
     docker:
       - image: python:3.7-stretch
-    parallelism: 2
 
 workflows:
   version: 2
