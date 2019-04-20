@@ -6,7 +6,7 @@ test:
 	pipenv run python3 -m unittest discover -s ./tests
 
 format:
-	pipenv run isort --recursive --atomic -y
+	pipenv run isort --recursive --atomic -y --skip .venv
 	pipenv run black .
 
 build:
