@@ -6,7 +6,22 @@ jobs:
       - image: python:3.7-stretch
     steps:
       - checkout
-      - run: python -V
       - run: pip3 install pipenv
-      - run: make init
+      - run: make install
+      - run: make test
+  format:
+    docker:
+      - image: python:3.7-stretch
+    steps:
+      - checkout
+      - run: pip3 install pipenv
+      - run: make install
       - run: "if [[ `git status --porcelain` ]]; then exit 1; fi"
+  build:
+    docker:
+      - image: python:3.7-stretch
+    steps:
+      - checkout
+      - run: pip3 install pipenv
+      - run: make install
+      - run: make build
