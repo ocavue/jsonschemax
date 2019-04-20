@@ -1,17 +1,21 @@
-version: 2
+version: 2.1
+
+executors:
+  python3:
+    docker:
+      - image: python:3.7-stretch
+      - image: python:3.7-alpine
 
 jobs:
   test:
-    docker:
-      - image: python:3.7-stretch
+    executor: python3
     steps:
       - checkout
       - run: pip3 install pipenv
       - run: make install
       - run: make test
   format:
-    docker:
-      - image: python:3.7-stretch
+    executor: python3
     steps:
       - checkout
       - run: pip3 install pipenv
@@ -19,8 +23,7 @@ jobs:
       - run: make format
       - run: "if [[ `git status --porcelain` ]]; then exit 1; fi"
   build:
-    docker:
-      - image: python:3.7-stretch
+    executor: python3
     steps:
       - checkout
       - run: pip3 install pipenv
