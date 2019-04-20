@@ -11,6 +11,7 @@ format:
 
 build:
 	pipenv run python3 setup.py sdist bdist_wheel
+	rm -rf build
 
 release:
 	pipenv run twine upload dist/* --skip-existing --verbose
