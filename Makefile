@@ -9,6 +9,8 @@ format:
 	pipenv run isort --recursive --atomic -y --skip .venv
 	pipenv run black .
 
-release:
+build:
 	pipenv run python3 setup.py sdist bdist_wheel
+
+release:
 	pipenv run twine upload dist/* --skip-existing --verbose
