@@ -1,12 +1,38 @@
-version: 2
+version: 2.1
+
+executors:
+  python3:
+    docker:
+      - image: python:3.7-stretch
+
+workflows:
+  version: 2
+  main:
+    jobs:
+      - test
+      - format
+      - build
 
 jobs:
   test:
-    docker:
-      - image: python:3.7-stretch
+    executor: python3
     steps:
       - checkout
-      - run: python -V
       - run: pip3 install pipenv
-      - run: make init
+      - run: make install
       - run: make test
+  format:
+    executor: python3
+    steps:
+      - checkout
+      - run: pip3 install pipenv
+      - run: make install
+      - run: make format
+      - run: "if [[ `git status --porcelain` ]]; then exit 1; fi"
+  build:
+    executor: python3
+    steps:
+      - checkout
+      - run: pip3 install pipenv
+      - run: make install
+      - run: make build
