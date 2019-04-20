@@ -16,6 +16,7 @@ jobs:
       - checkout
       - run: pip3 install pipenv
       - run: make install
+      - run: make format
       - run: "if [[ `git status --porcelain` ]]; then exit 1; fi"
   build:
     docker:
