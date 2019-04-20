@@ -5,7 +5,6 @@ jobs:
     docker:
       - image: python:3.7-stretch
     steps:
-      - checkout
       - run: pip3 install pipenv
       - run: make install
       - run: make test
@@ -13,7 +12,6 @@ jobs:
     docker:
       - image: python:3.7-stretch
     steps:
-      - checkout
       - run: pip3 install pipenv
       - run: make install
       - run: make format
@@ -22,7 +20,6 @@ jobs:
     docker:
       - image: python:3.7-stretch
     steps:
-      - checkout
       - run: pip3 install pipenv
       - run: make install
       - run: make build
