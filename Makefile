@@ -8,3 +8,9 @@ test:
 format:
 	pipenv run isort --recursive --atomic -y
 	pipenv run black .
+
+build:
+	pipenv run python3 setup.py sdist bdist_wheel
+
+upload:
+	pipenv run twine upload dist/*
