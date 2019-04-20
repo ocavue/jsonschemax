@@ -6,8 +6,8 @@ jobs:
       - image: python:3.7-stretch
     steps:
       - run: pip3 install pipenv
-      - ls
-      - pwd
+      - run: ls
+      - run: pwd
       - run: make install
       - run: make test
   format:
@@ -15,8 +15,8 @@ jobs:
       - image: python:3.7-stretch
     steps:
       - run: pip3 install pipenv
-      - ls
-      - pwd
+      - run: ls
+      - run: pwd
       - run: make install
       - run: make format
       - run: "if [[ `git status --porcelain` ]]; then exit 1; fi"
@@ -25,7 +25,7 @@ jobs:
       - image: python:3.7-stretch
     steps:
       - run: pip3 install pipenv
-      - ls
-      - pwd
+      - run: ls
+      - run: pwd
       - run: make install
       - run: make build
