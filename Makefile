@@ -1,5 +1,5 @@
-init:
-	pipenv install --dev
+install:
+	pipenv install --dev --pre
 
 test:
 	pipenv run mypy . --ignore-missing-imports

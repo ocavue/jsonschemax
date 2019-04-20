@@ -8,9 +8,12 @@ name = "pypi"
 [dev-packages]
 twine = "*"
 mypy = "*"
-black = "==18.9b0"
+black = "*"
 isort = "*"
 ipdb = "*"
 
 [requires]
 python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
