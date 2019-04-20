@@ -1,8 +1,8 @@
 from jsonschemax.compilation import compile
 from jsonschemax.errors import (
     InvalidInstanceError,
-    InvalidSchemaError,
     JsonSchemaXError,
+    InvalidSchemaError,
 )
 from jsonschemax.keywords import draft7_keyword_map
 from jsonschemax.meta_schemas import draft7_meta_schema
