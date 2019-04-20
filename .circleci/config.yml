@@ -9,4 +9,4 @@ jobs:
       - run: python -V
       - run: pip3 install pipenv
       - run: make init
-      - run: make test
+      - run: "if [[ `git status --porcelain` ]]; then exit 1; fi
