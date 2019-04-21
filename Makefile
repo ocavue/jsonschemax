@@ -1,8 +1,11 @@
 install:
 	pipenv install --dev --pre
 
-test:
+lint:
+	pipenv run flake8 ./**/*.py --max-line-length=100 --extend-ignore=E203
 	pipenv run mypy . --ignore-missing-imports
+
+test:
 	pipenv run python3 -m unittest discover -s ./tests
 
 format:
